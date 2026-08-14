@@ -1,4 +1,4 @@
-@startuml Inventaire
+@startuml Inventaires
 left to right direction
 
 actor "Inventaire" as I

@@ -1,4 +1,4 @@
-@startuml Admin
+@startuml Admin.
 left to right direction
 
 actor "Admin" as U

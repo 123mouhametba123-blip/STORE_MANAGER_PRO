@@ -1,90 +1,90 @@
 @startuml Diagramme_Classe_Cotisation
 
 class Utilisateur {
-     id : int
-     nomComplet : String
-     email : String
-     mot_passe : int
-     adresse : String
-     tel : String
+     id 
+     nomComplet 
+     email  
+     mot_passe  
+     adresse  
+     tel  
 }
 
 class Role {
-     id : int
-     nom : String
+     id  
+     nom  
 }
 
 class Client{
-     id : int
-     nom : string
-     prenom : string
-     email : string
-     tel : string
-     limiteCredit : float
+     id  
+     nom  
+     prenom  
+     email  
+     tel  
+     limiteCredit  float
 }
 
 class Commande{
-     id : int
-     datCommande : int
-     montantInitial : int
-     avance : float
+     id  
+     datCommande  
+     montantInitial  
+     avance  float
 }
 
 
 class StatutAppro{
-     id : int
-     nom : string
+     id  
+     nom  
 }
 
 
 class LigneCommande{
-     id : int
-     qteCommande : int
-     prixReel : float
+     id  
+     qteCommande  
+     prixReel  float
 }
 
 class ModePaiement{
-     id : int
-     mode : string
+     id  
+     mode  
 }
 
 class Reglement{
-     id : int
-     date : Date
-     montant : float
+     id  
+     date  Date
+     montant  float
 }
 
 class Produit{
-     id : int
-     libelle : string
-     prixVente : float
-     stockInitial : int
+     id  
+     libelle  
+     prixVente  float
+     stockInitial  
 }
 
 class Fournisseur{
-    id : int
-    nom : string
-    email : string
-    tel : string
-    adresse : string
+    id  
+    nom  
+    email  
+    tel  
+    adresse  
 }
 
 class StatutAppro{
-     id : int
-     nom : string
+     id  
+     nom  
 }
 
 class Appro{
-     id : int
-     refBl : string
-     dateAppro : Date
+     id  
+     refBl  
+     dateAppro  Date
 }
 
 class LigneAppro{
-     id : int
-     qteAppro : int
-     qteRecu : int
-     prixReel : float
+     id  
+     qteAppro  
+     qteRecu  
+     prixReel  float
 }
 
 

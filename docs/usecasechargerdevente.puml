@@ -1,4 +1,4 @@
-@startuml Vente Dette
+@startuml Vente_Dette
 left to right direction
 
 actor "Manager" as M
