@@ -1,90 +1,117 @@
-@startuml class
+@startuml Diagramme_Classe_Cotisation
 
-class Produit {
-   id
-   nom
-   prixAchat
-   prixVente
-   stock
-   seuilStock
+class Utilisateur {
+     id : int
+     nomComplet : String
+     email : String
+     mot_passe : int
+     adresse : String
+     tel : String
 }
 
-class Client {
-   id
-   nom
-   telephone
-   email
-   limiteCredit
+class Role {
+     id : int
+     nom : String
 }
 
-class Fournisseur {
-   id
-   nom
-   telephone
-   email
-   adresse
+class Client{
+     id : int
+     nom : string
+     prenom : string
+     email : string
+     tel : string
+     limiteCredit : float
 }
 
-class Commande {
-     id
-     dateCommande
-     total
-     statut
+class Commande{
+     id : int
+     datCommande : int
+     montantInitial : int
+     avance : float
 }
 
-class LigneCommande {
-     id
-     quantite
-     prixUnitaire
-     sousTotal
+
+class StatutAppro{
+     id : int
+     nom : string
 }
 
-class Dette {
-     id
-     montant
-     montantRestant
-     statut
-     dateCreation
+
+class LigneCommande{
+     id : int
+     qteCommande : int
+     prixReel : float
 }
 
-class Paiement {
-     id
-     montant
-     datePaiement
-     modePaiement
+class ModePaiement{
+     id : int
+     mode : string
 }
 
-class Approvisionnement {
-     id
-     dateApprovisionnement
-     total
-     statut
+class Reglement{
+     id : int
+     date : Date
+     montant : float
 }
 
-class LigneApprovisionnement {
-     id
-     quantite
-     prixUnitaire
-     sousTotal
+class Produit{
+     id : int
+     libelle : string
+     prixVente : float
+     stockInitial : int
 }
 
- 
+class Fournisseur{
+    id : int
+    nom : string
+    email : string
+    tel : string
+    adresse : string
+}
 
-Client "1" -- "0..*" Commande
+class StatutAppro{
+     id : int
+     nom : string
+}
 
-Commande "1" -- "1..*" LigneCommande
+class Appro{
+     id : int
+     refBl : string
+     dateAppro : Date
+}
 
-Produit "1" -- "0..*" LigneCommande
-
-Commande "1" -- "0..1" Dette
-
-Dette "1" -- "0..*" Paiement
-
-Fournisseur "1" -- "0..*" Approvisionnement
-
-Approvisionnement "1" -- "1..*" LigneApprovisionnement
-
-Produit "1" -- "0..*" LigneApprovisionnement
+class LigneAppro{
+     id : int
+     qteAppro : int
+     qteRecu : int
+     prixReel : float
+}
 
 
-@enduml
+
+Utilisateur "0..*" --> "1" Role 
+Client "1" --> "0..*" Commande 
+Commande "1" --> "0..*" LigneCommande 
+Produit "1" --> "0..*" LigneCommande 
+
+Appro "0..*" --> "1" Fournisseur 
+Appro "1" --> "0..*" LigneAppro 
+Produit "1" --> "0..*" LigneAppro 
+
+StatutAppro "1" --> "0..*" Appro 
+Commande "0..*" --> "1" ModePaiement 
+Reglement "0..*" --> "1" Commande 
+
+Appro "0..*" --> "1" Utilisateur 
+Commande "0..*" --> "1" Utilisateur 
+
+
+
+
+
+
+
+
+
+
+@endum
