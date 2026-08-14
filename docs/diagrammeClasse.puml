@@ -1,4 +1,4 @@
-@startuml
+@startuml class
 
 class Produit {
    id
@@ -68,15 +68,23 @@ class LigneApprovisionnement {
      sousTotal
 }
 
-' Client "" -- "" Commande
-' Commande "" -- "" LigneCommande
-' Produit "" -- "" LigneCommande
+ 
 
-' Commande "" -- "" Dette
-' Dette "" -- "" Paiement
+Client "1" -- "0..*" Commande
 
-' Fournisseur "" -- "" Approvisionnement
-' Approvisionnement "" -- "*" LigneApprovisionnement
-' Produit "" -- "" LigneApprovisionnement
+Commande "1" -- "1..*" LigneCommande
+
+Produit "1" -- "0..*" LigneCommande
+
+Commande "1" -- "0..1" Dette
+
+Dette "1" -- "0..*" Paiement
+
+Fournisseur "1" -- "0..*" Approvisionnement
+
+Approvisionnement "1" -- "1..*" LigneApprovisionnement
+
+Produit "1" -- "0..*" LigneApprovisionnement
+
 
 @enduml

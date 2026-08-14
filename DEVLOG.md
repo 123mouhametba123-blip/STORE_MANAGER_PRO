@@ -9,7 +9,7 @@
 ### 🌃 [Vendredi - Phase 1] : Conception & BDD Fallback
 - **Heure de réalisation** : 20 H 
 - **Ce qui a été fait** : La modelisation
-- **Difficultés / Obstacles** :   
+- **Difficultés / Obstacles** :  sur les use case 
 
 ### ☀️ [Samedi - Phase 2] : POO, Repositories & Ventes POS
 - **Heure de réalisation** : 
