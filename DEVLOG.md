@@ -9,7 +9,7 @@
 ### 🌃 [Vendredi - Phase 1] : Conception & BDD Fallback
 - **Heure de réalisation** : 20 H 
 - **Ce qui a été fait** : La modelisation
-- **Difficultés / Obstacles** :  sur les use case 
+- **Difficultés / Obstacles** :  jai quelque probleme sur la  schema_sqlite.sql ,jai une un doute sur la creation de certaine classe dememe que our les tables
 
 ### ☀️ [Samedi - Phase 2] : POO, Repositories & Ventes POS
 - **Heure de réalisation** : 
