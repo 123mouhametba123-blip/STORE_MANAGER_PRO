@@ -1,0 +1,30 @@
+@startuml Vente Dette
+left to right direction
+
+actor "Manager" as M
+
+rectangle "Store_Manager" {
+
+    usecase "Vente POS" as VP
+    usecase "Gestion Dettes" as GD
+
+    usecase "Sélection des Articles" as SA
+    usecase "Historique Registre Général des Ventes & Commandes" as HRV
+    usecase "Enregistrer produit" as EP
+    usecase "Lister Statistiques" as LS
+
+    usecase "Registre des Dettes Actives" as RDA
+}
+
+M --> VP
+M --> GD
+
+VP ..> SA  : <<include>>
+VP ..> HRV : <<include>>
+VP ..> EP  : <<include>>
+VP ..> LS  : <<include>>
+
+GD ..> RDA : <<include>>
+GD ..> LS  : <<include>>
+
+@enduml

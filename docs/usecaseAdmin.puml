@@ -1,0 +1,113 @@
+@startuml Admin
+left to right direction
+
+actor "Admin" as U
+
+rectangle "Store_Manager" {
+
+   
+    usecase "Se connecter" as SC
+    usecase "Se déconnecter" as SD
+
+  
+    usecase "Voir tableau de bord" as TB
+    usecase "Consulter ventes récentes" as CVR
+    usecase "Consulter dettes du jour" as CDR
+    usecase "Consulter ruptures et alertes" as CRA
+    usecase "Voir livraisons du jour" as VLJ
+    usecase "Voir clients débiteurs" as VCD
+    usecase "Voir soldes fournisseurs" as VSF
+    usecase "Consulter statistiques" as ST
+
+  
+    usecase "Vente POS" as VP
+    usecase "Créer une vente" as CV
+    usecase "Ajouter produit à la vente" as APV
+    usecase "Encaisser paiement" as EP
+    usecase "Imprimer facture" as IF
+    usecase "Annuler vente" as AV
+
+ 
+    usecase "Gestion dettes" as GD
+    usecase "Créer une dette" as CD
+    usecase "Enregistrer remboursement" as ER
+    usecase "Consulter historique dettes" as CHD
+    usecase "Relancer client débiteur" as RCD
+
+ 
+    usecase "Approvisionnement" as A
+    usecase "Créer bon de livraison" as CBL
+    usecase "Réceptionner marchandise" as RM
+    usecase "Mettre à jour stock" as MJS
+    usecase "Consulter mouvements de stock" as CMS
+
+
+    usecase "Produits & tiers" as PT
+
+    usecase "Gérer produits" as GP
+    usecase "Ajouter produit" as AP
+    usecase "Modifier produit" as MP
+    usecase "Supprimer produit" as SP
+
+    usecase "Gérer clients" as GC
+    usecase "Gérer fournisseurs" as GF
+
+    ' usecase "Gérer utilisateurs" as GU
+    ' usecase "Créer utilisateur" as CU
+    ' usecase "Modifier utilisateur" as MU
+    ' usecase "Désactiver utilisateur" as DU
+}
+
+
+U --> SC
+U --> SD
+U --> TB
+U --> VP
+U --> GD
+U --> A
+U --> PT
+' U --> GU
+
+
+TB ..> CVR : <<include>>
+TB ..> CDR : <<include>>
+TB ..> CRA : <<include>>
+TB ..> VLJ : <<include>>
+TB ..> VCD : <<include>>
+TB ..> VSF : <<include>>
+TB ..> ST  : <<include>>
+
+
+VP ..> CV  : <<include>>
+VP ..> APV : <<include>>
+VP ..> EP  : <<include>>
+VP ..> IF  : <<include>>
+VP ..> AV  : <<include>>
+
+
+GD ..> CD  : <<include>>
+GD ..> ER  : <<include>>
+GD ..> CHD : <<include>>
+GD ..> RCD : <<include>>
+
+
+A ..> CBL : <<include>>
+A ..> RM  : <<include>>
+A ..> MJS : <<include>>
+A ..> CMS : <<include>>
+
+
+PT ..> GP : <<include>>
+PT ..> GC : <<include>>
+PT ..> GF : <<include>>
+
+GP ..> AP : <<include>>
+GP ..> MP : <<include>>
+GP ..> SP : <<include>>
+
+
+' GU ..> CU : <<include>>
+' GU ..> MU : <<include>>
+' GU ..> DU : <<include>>
+
+@enduml

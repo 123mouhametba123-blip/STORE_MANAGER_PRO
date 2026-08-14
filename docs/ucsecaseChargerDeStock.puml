@@ -1,0 +1,31 @@
+@startuml
+left to right direction
+
+actor "Manager" as M
+
+rectangle "Store_Manager" {
+
+    usecase "Produits & Tiers" as PT
+
+    usecase "Gestion Produits" as GP
+    usecase "Gestion Clients" as GC
+    usecase "Gestion Fournisseurs" as GF
+    usecase "Registre des Dettes Actives" as RDA
+    usecase "Sélection des Articles" as SA
+    usecase "Historique Catalogue Courant" as HCC
+    usecase "Enregistrer produit" as EP
+    usecase "Lister Statistiques" as LS
+}
+
+M --> PT
+
+PT ..> GP  : <<include>>
+PT ..> GC  : <<include>>
+PT ..> GF  : <<include>>
+PT ..> RDA : <<include>>
+PT ..> SA  : <<include>>
+PT ..> HCC : <<include>>
+PT ..> EP  : <<include>>
+PT ..> LS  : <<include>>
+
+@enduml

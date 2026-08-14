@@ -1,41 +1,82 @@
-@startuml classe
+@startuml
 
 class Produit {
-  
+   id
+   nom
+   prixAchat
+   prixVente
+   stock
+   seuilStock
 }
 
 class Client {
-    
+   id
+   nom
+   telephone
+   email
+   limiteCredit
 }
 
 class Fournisseur {
-   
+   id
+   nom
+   telephone
+   email
+   adresse
 }
 
 class Commande {
-    
+     id
+     dateCommande
+     total
+     statut
 }
 
 class LigneCommande {
-   
+     id
+     quantite
+     prixUnitaire
+     sousTotal
 }
 
 class Dette {
-    
+     id
+     montant
+     montantRestant
+     statut
+     dateCreation
 }
 
 class Paiement {
-    
- 
+     id
+     montant
+     datePaiement
+     modePaiement
 }
 
 class Approvisionnement {
-    
+     id
+     dateApprovisionnement
+     total
+     statut
 }
 
 class LigneApprovisionnement {
- 
+     id
+     quantite
+     prixUnitaire
+     sousTotal
 }
 
+' Client "" -- "" Commande
+' Commande "" -- "" LigneCommande
+' Produit "" -- "" LigneCommande
+
+' Commande "" -- "" Dette
+' Dette "" -- "" Paiement
+
+' Fournisseur "" -- "" Approvisionnement
+' Approvisionnement "" -- "*" LigneApprovisionnement
+' Produit "" -- "" LigneApprovisionnement
 
 @enduml
