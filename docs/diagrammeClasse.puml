@@ -1,0 +1,41 @@
+@startuml classe
+
+class Produit {
+  
+}
+
+class Client {
+    
+}
+
+class Fournisseur {
+   
+}
+
+class Commande {
+    
+}
+
+class LigneCommande {
+   
+}
+
+class Dette {
+    
+}
+
+class Paiement {
+    
+ 
+}
+
+class Approvisionnement {
+    
+}
+
+class LigneApprovisionnement {
+ 
+}
+
+
+@enduml
